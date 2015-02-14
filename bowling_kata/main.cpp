@@ -63,7 +63,7 @@ TEST_CASE( "bowling kata games" ) {
         g.add(3);
         g.add(2);
         
-        REQUIRE( g.score() == 18 );
         REQUIRE( g.scoreForFrame(1) == 13 );
+        REQUIRE( g.score() == 18 );
     }
 }
