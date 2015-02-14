@@ -29,14 +29,14 @@ TEST_CASE( "bowling kata games" ) {
     
     REQUIRE( g.score() == 0 );
     
-    SECTION( "add throw to game" )
+    SECTION( "should add throw to game" )
     {
         g.add(5);
         
         REQUIRE( g.score() == 5 );
     }
     
-    SECTION( "add multiple throws to game" )
+    SECTION( "should add multiple throws to game" )
     {
         g.add(5);
         g.add(4);
@@ -44,7 +44,7 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.score() == 9 );
     }
     
-    SECTION( "add multiple throws across frames" )
+    SECTION( "should add multiple throws across frames" )
     {
         g.add(5);
         g.add(4);
@@ -54,5 +54,16 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.score() == 18 );
         REQUIRE( g.scoreForFrame(1) == 9 );
         REQUIRE( g.scoreForFrame(2) == 18 );
+    }
+    
+    SECTION( "should add throws with a spare across frames" )
+    {
+        g.add(3);
+        g.add(7);
+        g.add(3);
+        g.add(2);
+        
+        REQUIRE( g.score() == 18 );
+        REQUIRE( g.scoreForFrame(1) == 13 );
     }
 }
