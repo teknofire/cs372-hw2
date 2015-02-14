@@ -12,12 +12,27 @@
 
 class Frame
 {
+    
+private:
+    int _score;
+    
 public:
-    int getScore()
-    {
-        return 0;
-    }
+    Frame(): _score(0)
+    { }
+    
+    int getScore();
+    void add(int);
 };
+
+int Frame::getScore()
+{
+    return _score;
+}
+
+void Frame::add(int pins)
+{
+    _score += pins;
+}
 
 TEST_CASE( "bowling kata") {
     Frame f;
@@ -26,7 +41,7 @@ TEST_CASE( "bowling kata") {
     
     SECTION( "add throw to frame" )
     {
-        f.add(5)
+        f.add(5);
         REQUIRE( f.getScore() == 5 );
     }
 }
