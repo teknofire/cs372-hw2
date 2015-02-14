@@ -23,4 +23,10 @@ TEST_CASE( "bowling kata") {
     Frame f;
     
     REQUIRE( f.getScore() == 0 );
+    
+    SECTION( "add throw to frame" )
+    {
+        f.add(5)
+        REQUIRE( f.getScore() == 5 );
+    }
 }
