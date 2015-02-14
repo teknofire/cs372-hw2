@@ -9,29 +9,17 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include <iostream>
+#include "frame.h"
 
-class Frame
+class Game
 {
-    
-private:
-    int _score;
-    
 public:
-    Frame(): _score(0)
-    { }
-    
-    int getScore();
-    void add(int);
+    int score();
 };
 
-int Frame::getScore()
+int Game::score()
 {
-    return _score;
-}
-
-void Frame::add(int pins)
-{
-    _score += pins;
+    return 0;
 }
 
 TEST_CASE( "bowling kata frames") {
