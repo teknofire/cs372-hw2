@@ -11,4 +11,7 @@
 #include <iostream>
 
 TEST_CASE( "bowling kata") {
+    Frame f;
+    
+    REQUIRE( f.getScore() = 0 );
 }
