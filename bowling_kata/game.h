@@ -15,11 +15,16 @@ class Game
 {
 private:
     std::vector<int> _throws;
+    int _currentFrame;
+    bool _firstFrameThrow;
     
 public:
+    Game(): _currentFrame(1), _firstFrameThrow(true) {}
+    
     int score();
     void add(int);
     int scoreForFrame(int);
+    int getCurrentFrame();
 };
 
 #endif /* defined(__bowling_kata__game__) */

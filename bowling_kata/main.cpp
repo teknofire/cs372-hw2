@@ -43,7 +43,7 @@ TEST_CASE( "bowling kata games" ) {
         g.add(4);
         
         REQUIRE( g.score() == 9 );
-        REQUIRE( g.getCurrentFrame() == 1 );
+        REQUIRE( g.getCurrentFrame() == 2 );
     }
     
     SECTION( "should add multiple throws across frames" )
@@ -56,7 +56,7 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.score() == 18 );
         REQUIRE( g.scoreForFrame(1) == 9 );
         REQUIRE( g.scoreForFrame(2) == 18 );
-        REQUIRE( g.getCurrentFrame() == 2 );
+        REQUIRE( g.getCurrentFrame() == 3 );
     }
     
     SECTION( "should add throws with a spare across frames" )
@@ -68,7 +68,7 @@ TEST_CASE( "bowling kata games" ) {
         
         REQUIRE( g.scoreForFrame(1) == 13 );
         REQUIRE( g.scoreForFrame(2) == 18 );
-        REQUIRE( g.getCurrentFrame() == 1 );
+        REQUIRE( g.getCurrentFrame() == 3 );
 
     }
 }

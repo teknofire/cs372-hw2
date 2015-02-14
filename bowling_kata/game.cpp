@@ -21,6 +21,16 @@ int Game::score()
 void Game::add(int pins)
 {
     _throws.push_back(pins);
+    
+    if (_firstFrameThrow)
+    {
+        _firstFrameThrow = false;
+    }
+    else
+    {
+        _firstFrameThrow = true;
+        _currentFrame++;
+    }
 }
 
 int Game::scoreForFrame(int frame)
@@ -42,4 +52,9 @@ int Game::scoreForFrame(int frame)
     }
     
     return score;
+}
+
+int Game::getCurrentFrame()
+{
+    return _currentFrame;
 }
