@@ -20,6 +20,7 @@ public:
     
     int score();
     void add(int);
+    int scoreForFrame(int);
 };
 
 #endif /* defined(__bowling_kata__game__) */

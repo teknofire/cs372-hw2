@@ -17,3 +17,8 @@ void Game::add(int pins)
 {
     _score += pins;
 }
+
+int Game::scoreForFrame(int frame)
+{
+    return 0;
+}
