@@ -155,4 +155,14 @@ TEST_CASE( "bowling kata games" ) {
         g.add(9);
         REQUIRE( g.score() == 299 );
     }
+    
+    SECTION( "should score 10 frame spare game" )
+    {
+        for (int i=0; i<9; i++)
+            g.add(10);
+        g.add(9);
+        g.add(1);
+        g.add(1);
+        REQUIRE( g.score() == 270 );
+    }
 }
