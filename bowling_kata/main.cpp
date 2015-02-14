@@ -43,4 +43,16 @@ TEST_CASE( "bowling kata games" ) {
         
         REQUIRE( g.score() == 9 );
     }
+    
+    SECTION( "add multiple throws across frames" )
+    {
+        g.add(5);
+        g.add(4);
+        g.add(7);
+        g.add(2);
+        
+        REQUIRE( g.score() == 18 );
+        REQUIRE( g.scoreForFrame(1) == 9 );
+        REQUIRE( g.scoreForFrame(2) == 18 );
+    }
 }
