@@ -10,17 +10,7 @@
 #include "catch.hpp"
 #include <iostream>
 #include "frame.h"
-
-class Game
-{
-public:
-    int score();
-};
-
-int Game::score()
-{
-    return 0;
-}
+#include "game.h"
 
 TEST_CASE( "bowling kata frames") {
     Frame f;
