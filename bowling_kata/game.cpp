@@ -30,7 +30,9 @@ int Game::scoreForFrame(int frame)
     
     for(int currentFrame = 0; currentFrame < frame; currentFrame++)
     {
-        score += _throws[currentThrow++] + _throws[currentThrow++];
+        auto firstThrow = _throws[currentThrow++];
+        auto secondThrow = _throws[currentThrow++];
+        score += firstThrow + secondThrow;
     }
     
     return score;
