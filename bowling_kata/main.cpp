@@ -29,14 +29,6 @@ TEST_CASE( "bowling kata games" ) {
     
     REQUIRE( g.score() == 0 );
     
-    SECTION( "should add throw to game" )
-    {
-        g.add(5);
-        
-        REQUIRE( g.score() == 5 );
-        REQUIRE( g.getCurrentFrame() == 1 );
-    }
-    
     SECTION( "should add multiple throws to game" )
     {
         g.add(5);

@@ -10,12 +10,7 @@
 
 int Game::score()
 {
-    int score = 0;
-    
-    for(auto i:_throws)
-        score += i;
-    
-    return score;
+    return scoreForFrame(_currentFrame -1);
 }
 
 void Game::add(int pins)
