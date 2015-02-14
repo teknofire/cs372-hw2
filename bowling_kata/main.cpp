@@ -89,4 +89,15 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.score() == 29 );
         REQUIRE( g.getCurrentFrame() == 3 );
     }
+    
+    SECTION( "should score simple strike case" )
+    {
+        g.add(10);
+        g.add(3);
+        g.add(6);
+        
+        REQUIRE( g.scoreForFrame(1) == 19 );
+        REQUIRE( g.score() == 28 );
+        REQUIRE( g.getCurrentFrame() == 3 );
+    }
 }
