@@ -10,8 +10,17 @@
 #include "catch.hpp"
 #include <iostream>
 
+class Frame
+{
+public:
+    int getScore()
+    {
+        return 0;
+    }
+};
+
 TEST_CASE( "bowling kata") {
     Frame f;
     
-    REQUIRE( f.getScore() = 0 );
+    REQUIRE( f.getScore() == 0 );
 }
