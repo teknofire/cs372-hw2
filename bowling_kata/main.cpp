@@ -108,6 +108,6 @@ TEST_CASE( "bowling kata games" ) {
             g.add(10);
         }
         REQUIRE( g.score() == 300 );
-        REQUIRE( g.getCurrentFrame() == 10 );
+        REQUIRE( g.getCurrentFrame() == 11 );
     }
 }

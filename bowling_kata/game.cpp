@@ -7,6 +7,7 @@
 //
 
 #include "game.h"
+#include <algorithm>  // std::min
 
 int Game::score()
 {
@@ -33,6 +34,7 @@ void Game::adjustCurrentFrame(int pins)
         _firstFrameThrow = true;
         _currentFrame++;
     }
+    _currentFrame = std::min(11, _currentFrame);
 }
 
 int Game::scoreForFrame(int frame)
