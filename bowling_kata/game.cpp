@@ -16,14 +16,17 @@ int Game::score()
 void Game::add(int pins)
 {
     _throws.push_back(pins);
-    adjustCurrentFrame();
+    adjustCurrentFrame(pins);
 }
 
-void Game::adjustCurrentFrame()
+void Game::adjustCurrentFrame(int pins)
 {
     if (_firstFrameThrow)
     {
-        _firstFrameThrow = false;
+        if (pins == 10)
+            _currentFrame++;
+        else
+            _firstFrameThrow = false;
     }
     else
     {
@@ -41,13 +44,19 @@ int Game::scoreForFrame(int frame)
     {
         
         auto firstThrow = _throws[currentThrow++];
-        auto secondThrow = _throws[currentThrow++];
-        auto frameScore = firstThrow + secondThrow;
         
-        if (frameScore == 10)
-            frameScore += _throws[currentThrow];
-        
-        score += frameScore;
+        if (firstThrow == 10)
+            score += 10 + _throws[currentThrow] + _throws[currentThrow + 1];
+        else
+        {
+            auto secondThrow = _throws[currentThrow++];
+            auto frameScore = firstThrow + secondThrow;
+            
+            if (frameScore == 10)
+                frameScore += _throws[currentThrow];
+            
+            score += frameScore;
+        }
     }
     
     return score;

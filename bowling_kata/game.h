@@ -25,7 +25,7 @@ public:
     void add(int);
     int scoreForFrame(int);
     int getCurrentFrame();
-    void adjustCurrentFrame();
+    void adjustCurrentFrame(int);
 };
 
 #endif /* defined(__bowling_kata__game__) */
