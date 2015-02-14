@@ -110,4 +110,49 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.score() == 300 );
         REQUIRE( g.getCurrentFrame() == 11 );
     }
+    
+    SECTION( "should score if last throw is a stike" )
+    {
+        for (int i=0; i<9; i++)
+        {
+            g.add(0);
+            g.add(0);
+        }
+        g.add(2);
+        g.add(8); // 10th frame spare
+        g.add(10); // Strike in last position of array.
+        REQUIRE( g.score() == 20 );
+    }
+    
+    SECTION( "should score given game" )
+    {
+        g.add(1);
+        g.add(4);
+        g.add(4);
+        g.add(5);
+        g.add(6);
+        g.add(4);
+        g.add(5);
+        g.add(5);
+        g.add(10);
+        g.add(0);
+        g.add(1);
+        g.add(7);
+        g.add(3);
+        g.add(6);
+        g.add(4);
+        g.add(10);
+        g.add(2);
+        g.add(8);
+        g.add(6);
+        REQUIRE( g.score() == 133 );
+    }
+    
+    SECTION( "should test heartbreak game" )
+    {
+        for (int i=0; i<11; i++)
+            g.add(10);
+        g.add(9);
+        REQUIRE( g.score() == 299 );
+    }
 }
