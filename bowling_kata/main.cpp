@@ -51,7 +51,19 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.getCurrentFrame() == 3 );
     }
     
-    SECTION( "should add throws with a spare across frames" )
+    SECTION( "should score simple spare case" )
+    {
+        g.add(3);
+        g.add(7);
+        g.add(3);
+        
+        REQUIRE( g.scoreForFrame(1) == 13 );
+        REQUIRE( g.score() == 13 );
+        REQUIRE( g.getCurrentFrame() == 2 );
+        
+    }
+    
+    SECTION( "should score simple frame after spare frame" )
     {
         g.add(3);
         g.add(7);
@@ -62,6 +74,19 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.scoreForFrame(2) == 18 );
         REQUIRE( g.score() == 18 );
         REQUIRE( g.getCurrentFrame() == 3 );
-
+    }
+    
+    SECTION( "should score multiple spares case" )
+    {
+        g.add(3);
+        g.add(7);
+        g.add(6);
+        g.add(4);
+        g.add(3);
+        
+        REQUIRE( g.scoreForFrame(1) == 16 );
+        REQUIRE( g.scoreForFrame(2) == 29 );
+        REQUIRE( g.score() == 29 );
+        REQUIRE( g.getCurrentFrame() == 3 );
     }
 }
