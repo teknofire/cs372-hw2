@@ -9,15 +9,14 @@
 #ifndef __bowling_kata__game__
 #define __bowling_kata__game__
 
+#include <vector>
+
 class Game
 {
 private:
-    int _score;
+    std::vector<int> _throws;
     
 public:
-    Game(): _score(0)
-    {}
-    
     int score();
     void add(int);
     int scoreForFrame(int);
