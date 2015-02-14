@@ -10,5 +10,10 @@
 
 int Game::score()
 {
-    return 0;
+    return _score;
+}
+
+void Game::add(int pins)
+{
+    _score += pins;
 }

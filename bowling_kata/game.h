@@ -11,8 +11,15 @@
 
 class Game
 {
+private:
+    int _score;
+    
 public:
+    Game(): _score(0)
+    {}
+    
     int score();
+    void add(int);
 };
 
 #endif /* defined(__bowling_kata__game__) */

@@ -28,4 +28,11 @@ TEST_CASE( "bowling kata games" ) {
     Game g;
     
     REQUIRE( g.score() == 0 );
+    
+    SECTION( "add throw to game" )
+    {
+        g.add(5);
+        
+        REQUIRE( g.score() == 5 );
+    }
 }
