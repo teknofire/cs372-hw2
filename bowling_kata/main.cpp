@@ -100,4 +100,14 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.score() == 28 );
         REQUIRE( g.getCurrentFrame() == 3 );
     }
+    
+    SECTION( "should score perfect game" )
+    {
+        for (int i=0; i<12; i++)
+        {
+            g.add(10);
+        }
+        REQUIRE( g.score() == 300 );
+        REQUIRE( g.getCurrentFrame() == 10 );
+    }
 }
