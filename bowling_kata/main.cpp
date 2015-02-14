@@ -68,6 +68,7 @@ TEST_CASE( "bowling kata games" ) {
         
         REQUIRE( g.scoreForFrame(1) == 13 );
         REQUIRE( g.scoreForFrame(2) == 18 );
+        REQUIRE( g.score() == 18 );
         REQUIRE( g.getCurrentFrame() == 3 );
 
     }
