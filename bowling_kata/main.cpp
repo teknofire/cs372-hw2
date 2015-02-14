@@ -34,7 +34,7 @@ void Frame::add(int pins)
     _score += pins;
 }
 
-TEST_CASE( "bowling kata") {
+TEST_CASE( "bowling kata frames") {
     Frame f;
     
     REQUIRE( f.getScore() == 0 );
@@ -44,4 +44,10 @@ TEST_CASE( "bowling kata") {
         f.add(5);
         REQUIRE( f.getScore() == 5 );
     }
+}
+
+TEST_CASE( "bowling kata games" ) {
+    Game g;
+    
+    REQUIRE( g.score() == 0 );
 }
