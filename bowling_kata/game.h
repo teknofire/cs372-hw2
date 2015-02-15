@@ -31,6 +31,8 @@ public:
     int getCurrentFrame();
     void adjustCurrentFrame(int);
     
+    int handleSecondThrow();
+    
 };
 
 #endif /* defined(__bowling_kata__game__) */
