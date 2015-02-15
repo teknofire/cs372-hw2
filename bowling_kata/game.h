@@ -18,6 +18,15 @@ private:
     int _currentFrame;
     bool _firstFrameThrow;
     int _currentThrow;
+
+    void adjustCurrentFrame(int);
+    
+    int handleSecondThrow();
+    bool strike();
+    bool spare();
+    int nextTwoBalls();
+    int nextBall();
+    int twoBallsInFrame();
     
 public:
     Game(): _currentFrame(1), _firstFrameThrow(true) {}
@@ -27,11 +36,6 @@ public:
     void add(int);
     int scoreForFrame(int);
     int getCurrentFrame();
-    void adjustCurrentFrame(int);
-    
-    int handleSecondThrow();
-    bool strike();
-    int nextTwoBalls();
     
 };
 

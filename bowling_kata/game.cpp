@@ -47,12 +47,15 @@ int Game::scoreForFrame(int frame)
         
         if (strike())
         {
-            _currentThrow++;
             score += 10 + nextTwoBalls();
+        }
+        else if (spare())
+        {
+            score += 10 + nextBall();
         }
         else
         {
-            score += handleSecondThrow();
+            score += twoBallsInFrame();
         }
     }
     
@@ -61,7 +64,29 @@ int Game::scoreForFrame(int frame)
 
 bool Game::strike()
 {
-    return _throws[_currentThrow] == 10;
+    if ( nextBall() == 10 )
+    {
+        _currentThrow++;
+        return true;
+    }
+    
+    return false;
+}
+
+bool Game::spare()
+{
+    if ( nextTwoBalls() == 10 )
+    {
+        _currentThrow += 2;
+        return true;
+    }
+    
+    return false;
+}
+
+int Game::nextBall()
+{
+    return _throws[_currentThrow];
 }
 
 int Game::nextTwoBalls()
@@ -69,15 +94,9 @@ int Game::nextTwoBalls()
     return _throws[_currentThrow] + _throws[_currentThrow+1];
 }
 
-int Game::handleSecondThrow()
+int Game::twoBallsInFrame()
 {
-    auto score = nextTwoBalls();
-    
-    if (score == 10)
-        score += _throws[_currentThrow+2];
-    
-    _currentThrow += 2;
-    return score;
+    return _throws[_currentThrow++] + _throws[_currentThrow++];
 }
 
 int Game::getCurrentFrame()
