@@ -19,6 +19,8 @@ public:
     Frame(): _score(0)
     { }
     
+    ~Frame() = default;
+    
     int getScore();
     void add(int);
 };

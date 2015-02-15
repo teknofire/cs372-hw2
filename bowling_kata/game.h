@@ -20,6 +20,7 @@ private:
     
 public:
     Game(): _currentFrame(1), _firstFrameThrow(true) {}
+    ~Game() = default;
     
     int score();
     void add(int);
