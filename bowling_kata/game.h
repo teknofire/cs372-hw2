@@ -19,16 +19,16 @@ private:
     bool _firstFrameThrow;
 
     void adjustCurrentFrame(int);
+    void advanceFrame();
     
     std::unique_ptr<Scorer> _scorer;
     
 public:
-    Game(): _currentFrame(1), _firstFrameThrow(true), _scorer(std::make_unique<Scorer>()) {}
+    Game(): _currentFrame(0), _firstFrameThrow(true), _scorer(std::make_unique<Scorer>()) {}
     ~Game() = default;
     
     int score();
     void add(int);
-    int getCurrentFrame();
     int scoreForFrame(int);
     
 };

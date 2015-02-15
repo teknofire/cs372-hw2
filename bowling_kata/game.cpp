@@ -11,7 +11,7 @@
 
 int Game::score()
 {
-    return scoreForFrame(getCurrentFrame() - 1);
+    return scoreForFrame(_currentFrame);
 }
 
 int Game::scoreForFrame(int frame)
@@ -30,19 +30,18 @@ void Game::adjustCurrentFrame(int pins)
     if (_firstFrameThrow)
     {
         if (pins == 10)
-            _currentFrame++;
+            advanceFrame();
         else
             _firstFrameThrow = false;
     }
     else
     {
         _firstFrameThrow = true;
-        _currentFrame++;
+        advanceFrame();
     }
-    _currentFrame = std::min(11, _currentFrame);
 }
 
-int Game::getCurrentFrame()
+void Game::advanceFrame()
 {
-    return _currentFrame;
+    _currentFrame = std::min(10, _currentFrame + 1);
 }

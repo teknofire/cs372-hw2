@@ -35,7 +35,6 @@ TEST_CASE( "bowling kata games" ) {
         g.add(4);
         
         REQUIRE( g.score() == 9 );
-        REQUIRE( g.getCurrentFrame() == 2 );
     }
     
     SECTION( "should add multiple throws across frames" )
@@ -48,7 +47,6 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.score() == 18 );
         REQUIRE( g.scoreForFrame(1) == 9 );
         REQUIRE( g.scoreForFrame(2) == 18 );
-        REQUIRE( g.getCurrentFrame() == 3 );
     }
     
     SECTION( "should score simple spare case" )
@@ -59,8 +57,6 @@ TEST_CASE( "bowling kata games" ) {
         
         REQUIRE( g.scoreForFrame(1) == 13 );
         REQUIRE( g.score() == 13 );
-        REQUIRE( g.getCurrentFrame() == 2 );
-        
     }
     
     SECTION( "should score simple frame after spare frame" )
@@ -73,7 +69,6 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.scoreForFrame(1) == 13 );
         REQUIRE( g.scoreForFrame(2) == 18 );
         REQUIRE( g.score() == 18 );
-        REQUIRE( g.getCurrentFrame() == 3 );
     }
     
     SECTION( "should score multiple spares case" )
@@ -87,7 +82,6 @@ TEST_CASE( "bowling kata games" ) {
         REQUIRE( g.scoreForFrame(1) == 16 );
         REQUIRE( g.scoreForFrame(2) == 29 );
         REQUIRE( g.score() == 29 );
-        REQUIRE( g.getCurrentFrame() == 3 );
     }
     
     SECTION( "should score simple strike case" )
@@ -98,7 +92,6 @@ TEST_CASE( "bowling kata games" ) {
         
         REQUIRE( g.scoreForFrame(1) == 19 );
         REQUIRE( g.score() == 28 );
-        REQUIRE( g.getCurrentFrame() == 3 );
     }
     
     SECTION( "should score perfect game" )
@@ -108,7 +101,6 @@ TEST_CASE( "bowling kata games" ) {
             g.add(10);
         }
         REQUIRE( g.score() == 300 );
-        REQUIRE( g.getCurrentFrame() == 11 );
     }
     
     SECTION( "should score if last throw is a stike" )
