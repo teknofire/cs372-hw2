@@ -18,8 +18,6 @@ private:
     int _currentFrame;
     bool _firstFrameThrow;
     int _currentThrow;
-    int _firstThrow;
-    int _secondThrow;
     
 public:
     Game(): _currentFrame(1), _firstFrameThrow(true) {}
@@ -32,6 +30,7 @@ public:
     void adjustCurrentFrame(int);
     
     int handleSecondThrow();
+    bool strike();
     
 };
 
