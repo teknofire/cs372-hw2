@@ -31,6 +31,7 @@ public:
     
     int handleSecondThrow();
     bool strike();
+    int nextTwoBalls();
     
 };
 

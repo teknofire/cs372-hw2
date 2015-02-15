@@ -48,7 +48,7 @@ int Game::scoreForFrame(int frame)
         if (strike())
         {
             _currentThrow++;
-            score += 10 + _throws[_currentThrow] + _throws[_currentThrow + 1];
+            score += 10 + nextTwoBalls();
         }
         else
         {
@@ -64,9 +64,14 @@ bool Game::strike()
     return _throws[_currentThrow] == 10;
 }
 
+int Game::nextTwoBalls()
+{
+    return _throws[_currentThrow] + _throws[_currentThrow+1];
+}
+
 int Game::handleSecondThrow()
 {
-    auto score = _throws[_currentThrow] + _throws[_currentThrow+1];
+    auto score = nextTwoBalls();
     
     if (score == 10)
         score += _throws[_currentThrow+2];
