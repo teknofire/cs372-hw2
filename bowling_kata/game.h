@@ -9,33 +9,27 @@
 #ifndef __bowling_kata__game__
 #define __bowling_kata__game__
 
-#include <vector>
+#include "scorer.h"
+#include <memory>
 
 class Game
 {
 private:
-    std::vector<int> _throws;
     int _currentFrame;
     bool _firstFrameThrow;
-    int _currentThrow;
 
     void adjustCurrentFrame(int);
     
-    bool strike();
-    bool spare();
-    
-    int nextTwoBalls();
-    int nextBall();
-    int twoBallsInFrame();
+    std::unique_ptr<Scorer> _scorer;
     
 public:
-    Game(): _currentFrame(1), _firstFrameThrow(true) {}
+    Game(): _currentFrame(1), _firstFrameThrow(true), _scorer(std::make_unique<Scorer>()) {}
     ~Game() = default;
     
     int score();
     void add(int);
-    int scoreForFrame(int);
     int getCurrentFrame();
+    int scoreForFrame(int);
     
 };
 

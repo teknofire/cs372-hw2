@@ -10,6 +10,7 @@
 		A31D798F1A8FE87200E28E3B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A31D798E1A8FE87200E28E3B /* main.cpp */; };
 		A31D79981A8FEF2700E28E3B /* frame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A31D79961A8FEF2700E28E3B /* frame.cpp */; };
 		A31D799B1A8FEFC300E28E3B /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A31D79991A8FEFC300E28E3B /* game.cpp */; };
+		A31D79A11A90602300E28E3B /* scorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A31D799F1A90602300E28E3B /* scorer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +32,9 @@
 		A31D79961A8FEF2700E28E3B /* frame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = frame.cpp; sourceTree = "<group>"; };
 		A31D79971A8FEF2700E28E3B /* frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frame.h; sourceTree = "<group>"; };
 		A31D79991A8FEFC300E28E3B /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
-		A31D799A1A8FEFC300E28E3B /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		A31D799A1A8FEFC300E28E3B /* game.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = game.h; sourceTree = "<group>"; };
+		A31D799F1A90602300E28E3B /* scorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scorer.cpp; sourceTree = "<group>"; };
+		A31D79A01A90602300E28E3B /* scorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scorer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				A31D79951A8FE8A200E28E3B /* catch.hpp */,
 				A31D798E1A8FE87200E28E3B /* main.cpp */,
 				A31D79991A8FEFC300E28E3B /* game.cpp */,
+				A31D799F1A90602300E28E3B /* scorer.cpp */,
+				A31D79A01A90602300E28E3B /* scorer.h */,
 				A31D799A1A8FEFC300E28E3B /* game.h */,
 				A31D79961A8FEF2700E28E3B /* frame.cpp */,
 				A31D79971A8FEF2700E28E3B /* frame.h */,
@@ -131,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A31D798F1A8FE87200E28E3B /* main.cpp in Sources */,
+				A31D79A11A90602300E28E3B /* scorer.cpp in Sources */,
 				A31D79981A8FEF2700E28E3B /* frame.cpp in Sources */,
 				A31D799B1A8FEFC300E28E3B /* game.cpp in Sources */,
 			);
@@ -216,6 +222,7 @@
 		A31D79931A8FE87200E28E3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -223,6 +230,7 @@
 		A31D79941A8FE87200E28E3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -246,6 +254,7 @@
 				A31D79941A8FE87200E28E3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
