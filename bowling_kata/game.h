@@ -17,6 +17,7 @@ private:
     std::vector<int> _throws;
     int _currentFrame;
     bool _firstFrameThrow;
+    int _currentThrow;
     
 public:
     Game(): _currentFrame(1), _firstFrameThrow(true) {}
@@ -27,6 +28,7 @@ public:
     int scoreForFrame(int);
     int getCurrentFrame();
     void adjustCurrentFrame(int);
+    
 };
 
 #endif /* defined(__bowling_kata__game__) */

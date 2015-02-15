@@ -40,22 +40,22 @@ void Game::adjustCurrentFrame(int pins)
 int Game::scoreForFrame(int frame)
 {
     int score = 0;
-    int currentThrow = 0;
+    _currentThrow = 0;
     
     for(int currentFrame = 0; currentFrame < frame; currentFrame++)
     {
         
-        auto firstThrow = _throws[currentThrow++];
+        auto firstThrow = _throws[_currentThrow++];
         
         if (firstThrow == 10)
-            score += 10 + _throws[currentThrow] + _throws[currentThrow + 1];
+            score += 10 + _throws[_currentThrow] + _throws[_currentThrow + 1];
         else
         {
-            auto secondThrow = _throws[currentThrow++];
+            auto secondThrow = _throws[_currentThrow++];
             auto frameScore = firstThrow + secondThrow;
             
             if (frameScore == 10)
-                frameScore += _throws[currentThrow];
+                frameScore += _throws[_currentThrow];
             
             score += frameScore;
         }
