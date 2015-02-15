@@ -21,9 +21,9 @@ private:
 
     void adjustCurrentFrame(int);
     
-    int handleSecondThrow();
     bool strike();
     bool spare();
+    
     int nextTwoBalls();
     int nextBall();
     int twoBallsInFrame();
