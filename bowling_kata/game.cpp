@@ -46,17 +46,11 @@ int Game::scoreForFrame(int frame)
     {
         
         if (strike())
-        {
             score += 10 + nextTwoBalls();
-        }
         else if (spare())
-        {
             score += 10 + nextBall();
-        }
         else
-        {
             score += twoBallsInFrame();
-        }
     }
     
     return score;
