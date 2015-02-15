@@ -19,6 +19,7 @@ private:
     bool _firstFrameThrow;
 
     void adjustCurrentFrame(int);
+    bool adjustFrameForStrike(int);
     void advanceFrame();
     
     std::unique_ptr<Scorer> _scorer;

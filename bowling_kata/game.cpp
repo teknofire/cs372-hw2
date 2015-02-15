@@ -28,17 +28,23 @@ void Game::add(int pins)
 void Game::adjustCurrentFrame(int pins)
 {
     if (_firstFrameThrow)
-    {
-        if (pins == 10)
-            advanceFrame();
-        else
-            _firstFrameThrow = false;
-    }
+        _firstFrameThrow = adjustFrameForStrike(pins);
     else
     {
         _firstFrameThrow = true;
         advanceFrame();
     }
+}
+
+bool Game::adjustFrameForStrike(int pins)
+{
+    if (pins == 10)
+    {
+        advanceFrame();
+        return true;
+    }
+    
+    return false;
 }
 
 void Game::advanceFrame()
