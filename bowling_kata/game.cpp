@@ -45,14 +45,14 @@ int Game::scoreForFrame(int frame)
     for(int currentFrame = 0; currentFrame < frame; currentFrame++)
     {
         
-        auto firstThrow = _throws[_currentThrow++];
+        _firstThrow = _throws[_currentThrow++];
         
-        if (firstThrow == 10)
+        if (_firstThrow == 10)
             score += 10 + _throws[_currentThrow] + _throws[_currentThrow + 1];
         else
         {
-            auto secondThrow = _throws[_currentThrow++];
-            auto frameScore = firstThrow + secondThrow;
+            _secondThrow = _throws[_currentThrow++];
+            auto frameScore = _firstThrow + _secondThrow;
             
             if (frameScore == 10)
                 frameScore += _throws[_currentThrow];
